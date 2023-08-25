@@ -1,0 +1,35 @@
+{
+  "name": "connectors-pg-connector",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/connectors/pg-connector/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/connectors/pg-connector",
+        "tsConfig": "libs/connectors/pg-connector/tsconfig.lib.json",
+        "packageJson": "libs/connectors/pg-connector/package.json",
+        "main": "libs/connectors/pg-connector/src/index.ts",
+        "assets": ["libs/connectors/pg-connector/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/connectors/pg-connector/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/connectors/pg-connector"],
+      "options": {
+        "jestConfig": "libs/connectors/pg-connector/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
